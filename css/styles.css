@@ -1,0 +1,124 @@
+body{
+  height: 100vh;
+  width: 100%;
+  background-color: #1f1f1f;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+:root{
+  --color1: green;
+  --color2: blue;
+}
+header{
+  min-height:80px;
+  width:100%;
+  border-bottom: 1px solid var(--color1);
+  h2{
+    color:var(--color1);
+  }
+  a{
+    position: absolute;
+    text-decoration:none;
+    top:auto;
+    left:40px;
+    color:var(--color1);
+  }
+}
+main{
+  display:flex;
+  padding:50px;
+  section{
+    color: rgb(221, 226, 231);
+    h3{
+      color: aliceblue;
+    }
+  }
+  section.info{
+    lu{
+      li{
+        margin-bottom:250px;
+      }
+    }
+    article{
+      border:1px solid var(--color1);
+    }
+  }
+  section.game{
+    p{
+      max-width:550px;
+      padding:0 0 20px 20px;
+    }
+    article{
+      display:flex;
+      align-items: center;
+      p{
+        max-width:300px;
+      }
+      a{
+        width: fit-content;
+        height: fit-content;
+        margin-left: 50px;
+        background-color: rgb(114, 223, 6);
+        border-radius:30px;
+        padding:10px 20px 10px 20px;
+        text-decoration: none;
+        color: #000;
+        box-shadow:5px 5px 5px rgba(0, 0, 0, 0.3);
+      }
+      a:hover{
+        transition-duration:250ms;
+        transform: scale(103%);
+        box-shadow:6px 6px 6px rgba(0, 0, 0, 0.35);
+      }
+    }
+  }
+}
+main.game{
+  width:100%;
+  display:flex;
+  justify-content: space-around;
+  padding:20px;
+  section{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap:10px;
+    width:50%;
+    padding:10px;
+    article{
+      width:180px;
+      height:180px;
+      border:2px solid;
+      border-radius:10px;
+      background-size: cover;
+      background-position: center;
+      font-size: 200%;
+      color:white;
+      cursor:pointer;
+    }
+    article:hover{
+      transform: scale(103%);
+    }
+  }
+  #imageList{
+    article{
+      border-color: var(--color1);
+    }
+    article:hover{
+      background-color: var(--color1);
+    }
+  }
+  #wordList{
+    article{
+      border-color: var(--color2);
+    }
+    article:hover{
+      background-color: var(--color2);
+    }
+  }
+}
+.center{
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+}
