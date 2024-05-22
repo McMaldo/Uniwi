@@ -11,9 +11,15 @@ function verificar(){
     if(clicksCounter.s1 && clicksCounter.s2){
         // console.log(selecteds);
         // pcComponents.forEach((e)=>(console.log(e)));
-        let elemento = false
-        pcComponents.map(e =>(selecteds.id == e.id  && selecteds.name == e.name ? elemento = true : false ));
-        console.log(elemento)
+        let unionBien = false
+        pcComponents.map(e =>(selecteds.id == e.id  && selecteds.name == e.name ? unionBien = true : false ));
+        console.log(unionBien)
+        if(unionBien){
+            let image = document.getElementById(selecteds.id);
+            image.remove()
+            let name = document.getElementById(selecteds.name);
+            name.remove()
+        }
     }
 }
 function unir(id){
