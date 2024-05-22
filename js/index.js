@@ -1,8 +1,9 @@
-import "../json/glosario.json"
-let glosario = document.getElementById("glosario");
-let articleImg = document.createElement("article");
-articleImg.classList.add("img"+id);
-articleImg.setAttribute('id',id);
-articleImg.setAttribute('onclick',"unir(id)");
-articleImg.classList.add("center");
-imageList.appendChild(articleImg);
+let glosarioSect = document.getElementById("glosario");
+glosario.forEach(({word})=>{
+    let wordLi = document.createElement("li");
+    wordLi.innerText = word;
+    // wordLi.classList.add("img"+id);
+    // wordLi.setAttribute('id',id);
+    // wordLi.classList.add("center");
+    // glosarioSect.appendChild(wordLi);
+})
