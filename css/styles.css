@@ -140,7 +140,7 @@ main.game{
       background-position: center;
       background-repeat: no-repeat;
     }
-    .selected,article:hover{
+    .selected{
       background-color: var(--color3);
     }
     .img1{
@@ -175,7 +175,7 @@ main.game{
     article{
       border-color: var(--color2);
     }
-    .selected,article:hover{
+    .selected{
       background-color: var(--color2);
     }
   }
