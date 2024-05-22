@@ -4,8 +4,8 @@
   --color2t: rgba(13, 13, 104, 0.3);
   --color3: rgb(100, 48, 0);
   --color3t: rgba(100, 48, 0, 0.3);
-  --unableBack: rgba(80, 80, 80, 0.3);
-  --unableBorder: rgb(80, 80, 80);
+  --unableBack: rgba(0, 179, 0, 0.3);
+  --unableBorder: rgb(0, 179, 0);
   --wrong: rgba(255, 0, 0, 0.5);
   --back: #1f1f1f;
 }
@@ -117,6 +117,7 @@ main.game{
   display:flex;
   justify-content: space-around;
   padding:20px;
+  position: relative;
   #imageList{
     article{
       border-color: var(--color3);
@@ -128,7 +129,7 @@ main.game{
       background-color: var(--color3t);
     }
     .selected{
-      background-color: var(--color3);
+      background-color: var(--color3)!important;
     }
     .img1{
       background-image: url(../img/img-1.png);
@@ -162,11 +163,11 @@ main.game{
     article{
       border-color: var(--color2);
     }
+    .selected{
+      background-color: var(--color2)!important;
+    }
     article:hover{
       background-color: var(--color2t);
-    }
-    .selected{
-      background-color: var(--color2);
     }
   }
   section{
@@ -215,6 +216,38 @@ main.game{
       transition-duration:none;
       transform: none;
     }
+  }
+  #showResults{
+    padding:40px;
+    border:2px solid black;
+    border-radius:50px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    text-transform:uppercase;
+    text-decoration:none;
+    font-size:1.5rem;
+    top:50%;
+    left:calc(50% - 130px);
+    backdrop-filter: blur(100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    div{
+      display:flex;
+      gap:5px;
+      div.asiertos{
+        padding:5px 15px;
+        border-radius:20px 0px 0px 20px;
+        background-color:rgb(0, 179, 0);;
+      }
+      div.errores{
+        padding:5px 15px;
+        border-radius:0px 20px 20px 0px;
+        background-color:rgb(255, 0, 0);;
+      }
+    }
+    
   }
 }
 .center{

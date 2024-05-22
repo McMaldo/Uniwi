@@ -4,7 +4,8 @@ let selecteds = {id:0,name:""};
 let clicksCounter = {s1:false,s2:false};
 let idanterior1 = 0;
 let idanterior2 = 0;
-var total = 6;
+var total = 3;
+var totalInicio = total;
 var wrong = 0;
 // funcion para verificar la union de los articulos
 function verificar(){
@@ -26,7 +27,27 @@ function verificar(){
             name.classList.add("unable");
             total -= 1;
             if(total < 1){
-                window.location.replace("../html/results.html");
+                let main = document.querySelector("main.game");
+                let span = document.createElement("span");
+                span.innerText = "Bien Hecho";
+                span.setAttribute('id','showResults');
+                main.appendChild(span);
+                let div = document.createElement("div");
+                span.appendChild(div);
+                let good = document.createElement("div");
+                good.classList.add("asiertos")
+                good.innerText = `Asiertos: ${totalInicio}`;
+                div.appendChild(good);
+                let bads = document.createElement("div");
+                bads.classList.add("errores")
+                bads.innerText = `Errores: ${wrong}`;
+                div.appendChild(bads);
+                let link = document.createElement("a");
+                link.setAttribute('href','../index.html');
+                link.innerText = "Volver a Home";
+                span.appendChild(link);
+                //window.location.replace("../html/results.html");
+
             }
         }else{
             image.classList.remove("selected");
@@ -34,25 +55,26 @@ function verificar(){
             name.classList.remove("selected");
             name.classList.add("wrong");
             wrong += 1;
+            console.log(wrong);
         }
         
     }
 }
-function removeWrong(selected){
-    if(selected.classList.contains("wrong")){
-        selected.classList.remove("wrong");
+function removeWrong(list){
+    let wrongList = list.querySelectorAll(".wrong");
+    if(wrongList){
+        wrongList.forEach(e => e.classList.remove("wrong"));
     }
 }
 function unir(id){
     let selected = document.getElementById(id);
     let otros = imageList.querySelector(".selected");
-    removeWrong(selected);
+    removeWrong(imageList);
     if (otros){
         otros.classList.remove("selected");
         if(selected.id==idanterior1){
             selected.classList.remove("selected")
             clicksCounter.s1 = false;
-            console.log(clicksCounter)
         }//el else se puede sacar, es solo para ver el valor de clikccounbter
         else{
             selected.classList.add("selected")
@@ -71,7 +93,7 @@ function unir(id){
 function unir2(id){
     let selected = document.getElementById(id);
     let otros = wordList.querySelector(".selected");
-    removeWrong(selected);
+    removeWrong(wordList);
     if (otros){
         otros.classList.remove("selected");
         if(selected.id==idanterior2){
