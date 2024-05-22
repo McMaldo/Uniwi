@@ -1,9 +1,0 @@
-[
-    {"id": 1,"word": "mierda", "desc": "para usarse en un lugar fijo"},
-    {"id": 2,"word": "compilar", "desc": "para usarse en un lugar fijo"},
-    {"id": 3,"word": "libreria", "desc": "para usarse en un lugar fijo"},
-    {"id": 4,"word": "cloudbook", "desc": "para usar aplicaciones de la nube"},
-    {"id": 5,"word": "laptop", "desc": "para usarse en incluso en movimiento"},
-    {"id": 6,"word": "tablet", "desc": "para usarse en un lugar fijo"},
-    {"id": 7,"word": "cellphone", "desc": "basados en los antiguos mp3"}
-]

@@ -1,32 +1,30 @@
-const imageList = document.querySelector("#imageList");
 const wordList = document.querySelector("#wordList");
-let selecteds = {id:0,name:""};
+const descList = document.querySelector("#descList");
+let selecteds = {id:0,word:""};
 let clicksCounter = {s1:false,s2:false};
 let idanterior1 = 0;
 let idanterior2 = 0;
-var total = 9;
+var total = 6;
 var totalInicio = total;
 var wrong = 0;
 // funcion para verificar la union de los articulos
 function verificar(){
   // console.log(clicksCounter);
   if(clicksCounter.s1 && clicksCounter.s2){
-    // console.log(selecteds);
-    // pcComponents.forEach((e)=>(console.log(e)));
     let unionBien = false
-    pcComponents.map(e =>(selecteds.id == e.id  && selecteds.name == e.name ? unionBien = true : false ));
+    glosario.map(e =>(selecteds.id == e.id  && selecteds.word == e.word ? unionBien = true : false ));
     console.log(unionBien)
-    let image = document.getElementById(selecteds.id);
-    let name = document.getElementById(selecteds.name);
+    let word = document.getElementById(selecteds.word);
+    let desc = document.getElementById(selecteds.id);
     clicksCounter = {s1:false,s2:false};
-    selecteds = {id:0,name:""};
+    selecteds = {id:0,word:""};
     if(unionBien){
-      image.classList.remove("selected");
-      image.classList.add("unable");
-      image.removeAttribute("onclick")
-      name.classList.remove("selected");
-      name.classList.add("unable");
-      name.removeAttribute("onclick");
+      word.classList.remove("selected");
+      word.classList.add("unable");
+      word.removeAttribute("onclick")
+      desc.classList.remove("selected");
+      desc.classList.add("unable");
+      desc.removeAttribute("onclick")
       total -= 1;
       if(total < 1){
         let main = document.querySelector("main.game");
@@ -41,7 +39,7 @@ function verificar(){
         good.innerText = `Aciertos: ${totalInicio}`;
         div.appendChild(good);
         let bads = document.createElement("div");
-        bads.classList.add("errores");
+        bads.classList.add("errores")
         bads.innerText = `Errores: ${wrong}`;
         div.appendChild(bads);
         let link = document.createElement("a");
@@ -52,10 +50,10 @@ function verificar(){
 
       }
     }else{
-      image.classList.remove("selected");
-      image.classList.add("wrong");
-      name.classList.remove("selected");
-      name.classList.add("wrong");
+      word.classList.remove("selected");
+      word.classList.add("wrong");
+      desc.classList.remove("selected");
+      desc.classList.add("wrong");
       wrong += 1;
       console.log(wrong);
     }
@@ -70,8 +68,9 @@ function removeWrong(list){
 }
 function unir(id){
   let selected = document.getElementById(id);
-  let otros = imageList.querySelector(".selected");
-  removeWrong(imageList);
+  let otros = wordList.querySelector(".selected");
+  removeWrong(wordList);
+  removeWrong(descList);
   if (otros){
     otros.classList.remove("selected");
     if(selected.id==idanterior1){
@@ -89,13 +88,15 @@ function unir(id){
     idanterior1 = selected.id
     console.log(clicksCounter)
   }
-  selecteds.id = id;
+  console.log(id)
+  selecteds.word = id;
   verificar();
 }
 function unir2(id){
   let selected = document.getElementById(id);
-  let otros = wordList.querySelector(".selected");
+  let otros = descList.querySelector(".selected");
   removeWrong(wordList);
+  removeWrong(descList);
   if (otros){
     otros.classList.remove("selected");
     if(selected.id==idanterior2){
@@ -114,32 +115,31 @@ function unir2(id){
     idanterior2 = selected.id
     console.log(clicksCounter)
   }
-  selecteds.name = id;
+  console.log(id)
+  selecteds.id = id;
   verificar();
 }
-// section de las imagenes
-let arrayRandom = pcComponents.slice(0,totalInicio);
-console.log(arrayRandom)
-arrayRandom = arrayRandom.sort(function(){return Math.random() - 0.5})
-arrayRandom.forEach(({id},k)=>{
+// section de las palabras
+let arrayRandom = glosario.slice(0,totalInicio);
+arrayRandom = arrayRandom.sort(function() { return Math.random() - 0.5 })
+arrayRandom.forEach(({word},k)=>{
   if(k<total){
     let articleImg = document.createElement("article");
-    articleImg.classList.add(`img${id}`);
-    articleImg.setAttribute('id',id);
+    articleImg.textContent = word;
+    articleImg.setAttribute('id',word);
     articleImg.setAttribute('onclick',"unir(id)");
     articleImg.classList.add("center");
-    imageList.appendChild(articleImg);
+    wordList.appendChild(articleImg);
   }
 });
-// section de las palabras
+// section de las wordnes
 arrayRandom = arrayRandom.sort(function() { return Math.random() - 0.5 })
-arrayRandom.forEach(({name},k)=>{
+arrayRandom.forEach(({id,desc},k)=>{
   if(k<total){
     let articleImg = document.createElement("article");
-    articleImg.textContent = name;
-    articleImg.setAttribute('id',name);
+    articleImg.textContent = desc;
+    articleImg.setAttribute('id',id);
     articleImg.setAttribute('onclick',"unir2(id)");
-    articleImg.classList.add("center");
-    wordList.appendChild(articleImg);
+    descList.appendChild(articleImg);
   }
 });
