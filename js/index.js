@@ -1,20 +1,8 @@
-const imageList = document.querySelector("#imageList");
-pcComponents.forEach(({img},k)=>{
-    if(k<6){
-        let articleImg = document.createElement("article");
-        // articleImg.textContent = img;
-        articleImg.style.backgroundImage = "../img/"+img;
-        articleImg.classList.add("center");
-        imageList.appendChild(articleImg);
-    }
-});
-
-const wordList = document.querySelector("#wordList");
-pcComponents.forEach(({name},k)=>{
-    if(k<6){
-        let articleImg = document.createElement("article");
-        articleImg.textContent = name;
-        articleImg.classList.add("center");
-        wordList.appendChild(articleImg);
-    }
-});
+import "../json/glosario.json"
+let glosario = document.getElementById("glosario");
+let articleImg = document.createElement("article");
+articleImg.classList.add("img"+id);
+articleImg.setAttribute('id',id);
+articleImg.setAttribute('onclick',"unir(id)");
+articleImg.classList.add("center");
+imageList.appendChild(articleImg);

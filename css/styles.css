@@ -1,6 +1,7 @@
 :root{
   --color1: green;
-  --color2: blue;
+  --color2: rgb(13, 13, 104);
+  --color3: rgb(100, 48, 0);
   --back: #1f1f1f;
 }
 body{
@@ -12,7 +13,7 @@ body{
 }
 header{
   min-height:80px;
-  width:100%;
+  width:calc(100% - 15px);
   border-bottom: 1px solid var(--color1);
   h2{
     color:var(--color1);
@@ -123,29 +124,58 @@ main.game{
       height:180px;
       border:2px solid;
       border-radius:10px;
-      background-size: cover;
-      background-position: center;
-      font-size: 200%;
+      font-size: 180%;
       color:white;
       cursor:pointer;
     }
     article:hover{
-      transform: scale(103%);
+      transition-duration:300ms;
+      transform: scale(105%);
     }
   }
   #imageList{
     article{
-      border-color: var(--color1);
+      border-color: var(--color3);
+      background-size:85%;
+      background-position: center;
+      background-repeat: no-repeat;
     }
-    article:hover{
-      background-color: var(--color1);
+    .selected,article:hover{
+      background-color: var(--color3);
+    }
+    .img1{
+      background-image: url(../img/img-1.png);
+    }
+    .img2{
+      background-image: url(../img/img-2.png);
+    }
+    .img3{
+      background-image: url(../img/img-3.png);
+    }
+    .img4{
+      background-image: url(../img/img-4.png);
+    }
+    .img5{
+      background-image: url(../img/img-5.png);
+    }
+    .img6{
+      background-image: url(../img/img-6.png);
+    }
+    .img7{
+      background-image: url(../img/img-7.png);
+    }
+    .img8{
+      background-image: url(../img/img-8.png);
+    }
+    .img9{
+      background-image: url(../img/img-9.png);
     }
   }
   #wordList{
     article{
       border-color: var(--color2);
     }
-    article:hover{
+    .selected,article:hover{
       background-color: var(--color2);
     }
   }

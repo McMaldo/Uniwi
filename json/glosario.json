@@ -1,0 +1,9 @@
+[
+    {"id": 1,"name": "mierda", "desc": "para usarse en un lugar fijo"},
+    {"id": 2,"name": "compilar", "desc": "para usarse en un lugar fijo"},
+    {"id": 3,"name": "libreria", "desc": "para usarse en un lugar fijo"},
+    {"id": 4,"name": "cloudbook", "desc": "para usar aplicaciones de la nube"},
+    {"id": 5,"name": "laptop", "desc": "para usarse en incluso en movimiento"},
+    {"id": 6,"name": "tablet", "desc": "para usarse en un lugar fijo"},
+    {"id": 7,"name": "cellphone", "desc": "basados en los antiguos mp3"}
+]
