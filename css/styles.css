@@ -1,7 +1,12 @@
 :root{
   --color1: green;
   --color2: rgb(13, 13, 104);
+  --color2t: rgba(13, 13, 104, 0.3);
   --color3: rgb(100, 48, 0);
+  --color3t: rgba(100, 48, 0, 0.3);
+  --unableBack: rgba(80, 80, 80, 0.3);
+  --unableBorder: rgb(80, 80, 80);
+  --wrong: rgba(255, 0, 0, 0.5);
   --back: #1f1f1f;
 }
 body{
@@ -112,33 +117,15 @@ main.game{
   display:flex;
   justify-content: space-around;
   padding:20px;
-  section{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap:10px;
-    width:50%;
-    padding:10px;
-    article{
-      width:180px;
-      height:180px;
-      border:2px solid;
-      border-radius:10px;
-      font-size: 180%;
-      color:white;
-      cursor:pointer;
-    }
-    article:hover{
-      transition-duration:300ms;
-      transform: scale(105%);
-    }
-  }
   #imageList{
     article{
       border-color: var(--color3);
       background-size:85%;
       background-position: center;
       background-repeat: no-repeat;
+    }
+    article:hover{
+      background-color: var(--color3t);
     }
     .selected{
       background-color: var(--color3);
@@ -175,8 +162,58 @@ main.game{
     article{
       border-color: var(--color2);
     }
+    article:hover{
+      background-color: var(--color2t);
+    }
     .selected{
       background-color: var(--color2);
+    }
+  }
+  section{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap:10px;
+    width:50%;
+    padding:10px;
+    article{
+      width:180px;
+      height:180px;
+      border:2px solid;
+      border-radius:10px;
+      font-size: 180%;
+      color:white;
+      cursor:pointer;
+    }
+    article:hover{
+      transition-duration:300ms;
+      transform: scale(105%);
+    }
+    .unable{
+      border-color: var(--unableBorder) !important;
+      background-color: var(--unableBack);
+      cursor: default;
+    }
+    .unable:hover{
+      background-color: var(--unableBack) !important;
+    }
+    .unable:hover{
+      background-color: var(--unableBack);
+      transition-duration:none;
+      transform: none;
+    }
+    .wrong{
+      border-color: var(--wrong) !important;
+      background-color: var(--wrong);
+      cursor: default;
+    }
+    .wrong:hover{
+      background-color: var(--wrong) !important;
+    }
+    .wrong:hover{
+      background-color: var(--wrong);
+      transition-duration:none;
+      transform: none;
     }
   }
 }

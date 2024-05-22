@@ -4,7 +4,8 @@ let selecteds = {id:0,name:""};
 let clicksCounter = {s1:false,s2:false};
 let idanterior1 = 0;
 let idanterior2 = 0;
-
+var total = 6;
+var wrong = 0;
 // funcion para verificar la union de los articulos
 function verificar(){
     // console.log(clicksCounter);
@@ -14,17 +15,38 @@ function verificar(){
         let unionBien = false
         pcComponents.map(e =>(selecteds.id == e.id  && selecteds.name == e.name ? unionBien = true : false ));
         console.log(unionBien)
+        let image = document.getElementById(selecteds.id);
+        let name = document.getElementById(selecteds.name);
+        clicksCounter = {s1:false,s2:false};
+        selecteds = {id:0,name:""};
         if(unionBien){
-            let image = document.getElementById(selecteds.id);
-            image.remove()
-            let name = document.getElementById(selecteds.name);
-            name.remove()
+            image.classList.remove("selected");
+            image.classList.add("unable");
+            name.classList.remove("selected");
+            name.classList.add("unable");
+            total -= 1;
+            if(total < 1){
+                window.location.replace("../html/results.html");
+            }
+        }else{
+            image.classList.remove("selected");
+            image.classList.add("wrong");
+            name.classList.remove("selected");
+            name.classList.add("wrong");
+            wrong += 1;
         }
+        
+    }
+}
+function removeWrong(selected){
+    if(selected.classList.contains("wrong")){
+        selected.classList.remove("wrong");
     }
 }
 function unir(id){
     let selected = document.getElementById(id);
     let otros = imageList.querySelector(".selected");
+    removeWrong(selected);
     if (otros){
         otros.classList.remove("selected");
         if(selected.id==idanterior1){
@@ -49,6 +71,7 @@ function unir(id){
 function unir2(id){
     let selected = document.getElementById(id);
     let otros = wordList.querySelector(".selected");
+    removeWrong(selected);
     if (otros){
         otros.classList.remove("selected");
         if(selected.id==idanterior2){
@@ -72,7 +95,7 @@ function unir2(id){
 }
 // section de las imagenes
 pcComponents.forEach(({id},k)=>{
-    if(k<9){
+    if(k<total){
         let articleImg = document.createElement("article");
         articleImg.classList.add(`img${id}`);
         articleImg.setAttribute('id',id);
@@ -83,7 +106,7 @@ pcComponents.forEach(({id},k)=>{
 });
 // section de las palabras
 pcComponents.forEach(({name},k)=>{
-    if(k<9){
+    if(k<total){
         let articleImg = document.createElement("article");
         articleImg.textContent = name;
         articleImg.setAttribute('id',name);
