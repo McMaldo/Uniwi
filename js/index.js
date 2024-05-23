@@ -10,19 +10,24 @@ function expand(id){
     if(otros){
         otros.forEach(e=>e.remove());
         if(id==idAnterior){
-            selected.classList.remove("selected")
+            selected.classList.remove("selected");
+            id = 0;
         }else{
-            selected.classList.add("selected")
+            selected.classList.add("selected");
+
             let descLi = document.createElement("div");
+            descLi.classList.add("center");
             glosario.forEach(e=>(Number(e.id) == Number(id) ?  descLi.innerText = e.desc : false));
             selected.appendChild(descLi);
         }
     }else{
         selected.classList.add("selected")
         let descLi = document.createElement("div");
+        descLi.classList.add("center");
         glosario.forEach(e=>(Number(e.id) == Number(id) ?  descLi.innerText = e.desc : false));
         selected.appendChild(descLi);
     }
+    idAnterior = id;
 }
 glosario.forEach(({id,word})=>{
     let wordLi = document.createElement("li");

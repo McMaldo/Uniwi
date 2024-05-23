@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/material-icons.css">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="./img/cpu.png">
   <script src="./js/data.js"></script>
@@ -10,9 +11,15 @@
 </head>
 <body>
   <header class="center">
-    <h2>Centro de Formación Profesional 401 - Subsede E.E.S.T.n°3</h2>
+    <a href="#" class="icons">arrow_back_ios</a>
+    <h2>Centro de Formación Profesional 401 Subsede E.E.S.T.n°3</h2>
+    <div class="theme center">
+      <label for="toggle" class="icons">dark_mode</label>
+      <input type="checkbox" id="toggle" hidden>
+      <label for="toggle" class="icons">wb_sunny</label>
+    </div>
   </header>
-  <main>
+  <main class="home">
     <section class="info">
       <!-- <h2>Subsede E.E.S.T.n°3</h2> -->
       <h3>Glosario Informatico</h3>
@@ -33,7 +40,7 @@
           <iframe width="560" height="315" src="https://www.youtube.com/embed/0zkX6nlpiSk?si=n6X01JN6T-hsS8-B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </article>
         <article>
-          <h3>Guía completa para entender todos los componentes de tu ordenador</h3>
+          <h3>Componentes en General</h3>
           ¿Cuáles son los componentes de un ordenador?
           <ul>
             <li>Procesador o CPU</li>
@@ -76,7 +83,7 @@
         <a href="./html/fer.html" class="center">Empecemos</a>
       </article>
       <h3>Autores:</h3>
-      <ul>
+      <ul id="devs">
         <li>Maldonado Pablo</li>
         <li>Stachioni Joaquin</li>
         <li>Cabral Luca</li>

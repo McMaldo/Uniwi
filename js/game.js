@@ -46,7 +46,7 @@ function verificar(){
         div.appendChild(bads);
         let link = document.createElement("a");
         link.setAttribute('href','../index.html');
-        link.innerText = "Volver a Home";
+        link.innerText = "Volver al Inicio";
         span.appendChild(link);
         //window.location.replace("../html/results.html");
 
