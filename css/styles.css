@@ -82,6 +82,32 @@ main.home{
         text-decoration:var(--color1);
       }
     }
+    #glosario{
+      display: flex;
+      flex-wrap: wrap;
+      list-style:none;
+      gap:5px;
+      li{
+        flex-direction: column;
+        max-height:fit-content;
+        padding:3px 10px;
+        border:1px solid rgba(0, 180, 0, 0.5);
+        border-radius:20px;
+        text-align: center;
+        cursor:pointer;
+        div{
+          width:100%;
+          border-top:1px solid white;
+        }
+      }
+      li.selected{
+        width:100%;
+      }
+      ::-webkit-scrollbar-track{
+        padding:5px;
+        background-color: transparent;
+      }
+    }
   }
   section.info{
     width:60%;
@@ -115,32 +141,6 @@ main.home{
           text-decoration:none;
           color:var(--color1);
         }
-      }
-    }
-    #glosario{
-      display: flex;
-      flex-wrap: wrap;
-      list-style:none;
-      gap:5px;
-      li{
-        flex-direction: column;
-        max-height:fit-content;
-        padding:3px 10px;
-        border:1px solid rgba(0, 180, 0, 0.5);
-        border-radius:20px;
-        text-align: center;
-        cursor:pointer;
-        div{
-          width:100%;
-          border-top:1px solid white;
-        }
-      }
-      li.selected{
-        width:100%;
-      }
-      ::-webkit-scrollbar-track{
-        padding:5px;
-        background-color: transparent;
       }
     }
   }
@@ -194,31 +194,31 @@ main.game{
       background-color: var(--color3)!important;
     }
     .img1{
-      background-image: url(../img/img-1.png);
+      background-image: url(../img/real/img-1-real.png);
     }
     .img2{
-      background-image: url(../img/img-2.png);
+      background-image: url(../img/real/img-2-real.png);
     }
     .img3{
-      background-image: url(../img/img-3.png);
+      background-image: url(../img/real/img-3-real.png);
     }
     .img4{
-      background-image: url(../img/img-4.png);
+      background-image: url(../img/real/img-4-real.png);
     }
     .img5{
-      background-image: url(../img/img-5.png);
+      background-image: url(../img/real/img-5-real.png);
     }
     .img6{
-      background-image: url(../img/img-6.png);
+      background-image: url(../img/real/img-6-real.png);
     }
     .img7{
-      background-image: url(../img/img-7.png);
+      background-image: url(../img/real/img-7-real.png);
     }
     .img8{
-      background-image: url(../img/img-8.png);
+      background-image: url(../img/real/img-8-real.png);
     }
     .img9{
-      background-image: url(../img/img-9.png);
+      background-image: url(../img/real/img-9-real.png);
     }
   }
   #wordList{
