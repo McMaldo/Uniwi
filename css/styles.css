@@ -377,6 +377,7 @@ main.game{
   header{
     padding:0 50px;
     border-radius:0;
+    width:100%;
     margin:0;
     .theme{
       display: flex;
@@ -387,9 +388,6 @@ main.game{
     flex-direction: column;
     section{
       width:100% !important;
-    }
-    section.game{
-      border:0;
     }
   }
 }
