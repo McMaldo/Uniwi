@@ -31,7 +31,7 @@ header{
   min-height:80px;
   width:calc(100% - 40px);
   border-bottom: 1px solid var(--color1);
-  background-color:#16161b2f;
+  background-color:rgba(22, 22, 27, 0.5);
   backdrop-filter:blur(20px);
   position:sticky;
   box-shadow:0 5px 10px var(--color1t);
@@ -82,7 +82,7 @@ main.home{
         border:1px solid var(--color1);
         margin-bottom:8px;
         position: relative;
-        h3{
+        h4{
           min-width: 250px;
         }
         ul,p{
@@ -136,18 +136,24 @@ main.home{
   section{
     padding:0 20px;
     h3{
-      color:var(--color1);
+      margin:20px 0 8px 0;
       font-weight: 600;
-      border-bottom:1px solid var(--color1);
-      margin:15px 0 8px 0;
       font-size:1.3rem;
       width:100%;
+      font-style: italic;
+    }
+    h3,h4{
+      color:var(--fontLight);
+      border-bottom:1px solid var(--color1);
+    }
+    h4{
+      margin:10px 0;
     }
     p{
       max-width:550px;
-      padding:0 0 20px 20px;
+      padding:0 0 10px 20px;
     }
-    #pc,#devs{
+    #pc{
       padding-left:20px;
       li{
         text-decoration:var(--color1);
@@ -316,10 +322,8 @@ main.game{
     color: white;
     position: absolute;
     text-transform:uppercase;
-    text-decoration:none;
     font-size:1.5rem;
-    top:20%;
-    backdrop-filter: blur(100px);
+    top:100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -328,15 +332,68 @@ main.game{
       display:flex;
       gap:5px;
       div.aciertos{
-        padding:5px 15px;
-        border-radius:20px 0px 0px 20px;
+        border-radius:20px 0 0 0;
         background-color:rgb(0, 179, 0);;
       }
       div.errores{
-        padding:5px 15px;
-        border-radius:0px 20px 20px 0px;
+        border-radius:0 20px 0 0;
         background-color:rgb(255, 0, 0);;
       }
+      .aciertos,.errores{
+        width:150px;
+      }
+      
+    }
+    a{
+      text-decoration:none;
+      width:100%;
+      border-radius:0 0 20px 20px;
+      color:blueviolet;
+      border:1px solid blueviolet;
+    }
+  }
+}
+footer{
+  flex-direction: column;
+  min-height:200px;
+  width:100%;
+  background-color: rgb(10, 10, 10);
+  padding:15px 30px 15px 30px;
+  h2,div.info{
+    width:100%;
+    padding:10px 0;
+    border-bottom:2px solid rgb(55, 55, 55);
+  }
+  h3,p{
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding:1px 0;
+  }
+  p{
+    color:rgb(140, 140, 140);
+  }
+  div.info{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding:20px 30px;
+    div{
+      width: fit-content;
+      flex-direction: column;
+      align-items: start;
+    }
+  }
+  div.ubic{
+    width:100%;
+    display: flex;
+    justify-content: end;
+    padding:10px 0 0 0;
+    p{
+      padding:0 3px;
+      border-right:1px solid rgb(55, 55, 55);
+    }
+    p.dist{
+      border:0;
     }
   }
 }
@@ -367,7 +424,7 @@ main.game{
 } 
 ::-webkit-scrollbar-thumb:hover{
   transition-duration:2s;
-  background-color: aquamarine;
+  background-color: var(--color1);
 }
 ::-webkit-scrollbar-thumb:active{
   transition-duration:2s;

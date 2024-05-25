@@ -4,7 +4,7 @@ let selecteds = {id:0,word:""};
 let clicksCounter = {s1:false,s2:false};
 let idanterior1 = 0;
 let idanterior2 = 0;
-var total = 6;
+var total = 5;
 var totalInicio = total;
 var wrong = 0;
 // funcion para verificar la union de los articulos
@@ -35,16 +35,19 @@ function verificar(){
         let div = document.createElement("div");
         span.appendChild(div);
         let good = document.createElement("div");
-        good.classList.add("aciertos")
+        good.classList.add("aciertos");
+        good.classList.add("center");
         good.innerText = `Aciertos: ${totalInicio}`;
         div.appendChild(good);
         let bads = document.createElement("div");
-        bads.classList.add("errores")
+        bads.classList.add("errores");
+        bads.classList.add("center");
         bads.innerText = `Errores: ${wrong}`;
         div.appendChild(bads);
         let link = document.createElement("a");
         link.setAttribute('href','../index.html');
         link.innerText = "Volver a Home";
+        link.classList.add("center");
         span.appendChild(link);
         //window.location.replace("../html/results.html");
 

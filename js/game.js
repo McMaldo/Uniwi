@@ -38,15 +38,18 @@ function verificar(){
         span.appendChild(div);
         let good = document.createElement("div");
         good.classList.add("aciertos")
+        good.classList.add("center")
         good.innerText = `Aciertos: ${totalInicio}`;
         div.appendChild(good);
         let bads = document.createElement("div");
         bads.classList.add("errores");
+        bads.classList.add("center");
         bads.innerText = `Errores: ${wrong}`;
         div.appendChild(bads);
         let link = document.createElement("a");
         link.setAttribute('href','../index.html');
         link.innerText = "Volver al Inicio";
+        link.classList.add("center");
         span.appendChild(link);
         //window.location.replace("../html/results.html");
 
